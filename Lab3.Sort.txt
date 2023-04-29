@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: The best and worst speed of a bubble sort algorithm differ a lot. The best is O(n) and the worst is O(n^2). The speed of sort1 has this feature.
+
+sort2 uses: merge sort
+
+How do you know?: The speed of the program stays comparatively stable when sort different texts. And it is overall the fastest.
+
+sort3 uses: selection sort
+
+How do you know?: The best and worst speed of a selection sort is always O(n) so its speed should be comparatively stable when face different texts. And it is comparatively slower compared with merge sort. 
