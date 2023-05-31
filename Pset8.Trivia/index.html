@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+
+                let correct = document.querySelectorAll('.correct');
+                for (let i = 0; i < correct.length; i++) {
+                correct[i].addEventListener('click', function () {
+                correct[i].style.backgroundColor = 'green';
+                document.querySelector('#feedback1').innerHTML = 'Correct';
+                });
+                }
+
+                // When click  on incorrect answer button, set the red color
+                let incorrects = document.querySelectorAll('.wrong');
+                for(let i = 0; i < incorrects.length; i++)
+                {
+                    incorrects[i].addEventListener('click', function() {
+                    incorrects[i].style.backgroundColor = 'red';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect';
+                    });
+                }
+
+
+                document.querySelector('#check').addEventListener('click', function(){
+                    let input = document.querySelector('input');
+                    if (input.value == 'Gaogao')
+                    {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    }
+                    else{
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect';
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>If the following three people drop into a river at the same time, which one will you save first?</h3>
+                    <div class = "selection">
+                        <button class = 'wrong'>Windy</button>
+                        <button class = 'wrong'>Feifeilong</button>
+                        <button class = 'correct'>Gaogao</button>
+                        <button class = 'wrong'>Fawei</button>
+                        <button class = 'wrong'>Pitrick</button>
+                    </div>
+                <h3>If the following five people/items drop into a river at the same time, which one will you save first?</h3>
+                    <div class = "selection">
+                        <button class = 'wrong'>President of the United States of America</button>
+                        <button class = 'wrong'>500 million US dollar in cash</button>
+                        <button class = 'correct'>Gaogao</button>
+                        <button class = 'wrong'>A Tesla factory</button>
+                        <button class = 'wrong'>A monster who can grant you five wishes</button>
+                    </div>
+                <h3>If you can make one of the following wishes come true, which one will you choose?</h3>
+                    <div class = "selection">
+                        <button class = 'wrong'>Be the smartest person in the world.</button>
+                        <button class = 'wrong'>Be the richest person in the world.</button>
+                        <button class = 'correct'>Buy Gaogao Disneyland.</button>
+                        <button class = 'wrong'>Be a superman.</button>
+                        <button class = 'wrong'>Be the spiderman.</button>
+                        <h4 id = 'feedback1'></h4>
+                    </div>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Who is your favourite person in the world?</h3>
+                <input type = 'text'></input>
+                <button id = 'check'>Check Answer</button>
+                <p id = 'feedback2'></p>
+            </div>
+        </div>
+    </body>
+</html>
